@@ -5,6 +5,7 @@ const operations = require('./operations');
 const GREETING_MESSAGE = 'Hello, Arthy! Enter command name and args!';
 
 console.log(GREETING_MESSAGE);
+console.log('Yo-ho-ho! And a bottle of rome!');
 
 process.stdin.on('data', data => {
     const [ operation, argNumber1, argNumber2 ] = parseInput(data);
