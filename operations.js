@@ -4,18 +4,21 @@ function sum(a, b) {
     return a + b;
 }
 
-function sub(a, b) {
+function subtract(a, b) {
     return a - b;
 }
 
-function mult(a, b) {
+function multiply(a, b) {
     return a * b;
 }
 
-function div(a, b) {
+function divide(a, b) {
     return a / b;
 }
 
 module.exports = {
-    sum, sub, mult, div,
+    sum,
+    subtract,
+    multiply,
+    divide,
 };
