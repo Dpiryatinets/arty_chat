@@ -5,7 +5,7 @@ const ozzyText = {
     b: 'don\'t want ',
     c: 'to ',
     d: 'the ',
-    f: 165,
+    f: 1,
     e: 'world'
 };
 
@@ -14,9 +14,19 @@ const mapResult = Object.keys(ozzyText)
 function getText(key) {
     return ozzyText[key];
 }
-const joint = mapResult.join('');
-const finalResult = joint.replace(/[0-9]/g, '');
+const finalResult = mapResult.filter(function (value) {
+    if (typeof (value) === "string") {
+        return true;
+    } else {
+        return false;
+    }
+});
+
+//или лучше так?:
+//    return typeof (value) === "string";
+//});
 console.log(finalResult);
+
 // Задание номер 1
 // Преобразовать массив свойств объекта ozzyText так,
 // чтобы в результирующем массиве оказались только строковые значения
