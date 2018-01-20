@@ -15,21 +15,16 @@ function getText(key) {
     return ozzyText[key];
 }
 const finalResult = mapResult.filter(function (value) {
-    if (typeof (value) === "string") {
-        return true;
-    } else {
-        return false;
-    }
-});
+    return typeof (value) === "string";
+    })
 
-//или лучше так?:
-//    return typeof (value) === "string";
-//});
 console.log(finalResult);
 
 // Задание номер 1
 // Преобразовать массив свойств объекта ozzyText так,
 // чтобы в результирующем массиве оказались только строковые значения
+
+//const reduceResult - Object.keys
 
 /*
 const reduceResult = Object.keys(ozzyText)
@@ -48,3 +43,12 @@ const input = { a: 'b', c: 'd' };
 const output = invert(input);
 console.log(output); // { b: 'a', d: 'c' }
 */
+
+const invertResult = Object.keys(ozzyText)
+    .reduce (function (accumulator, key) {
+        accumulator[ozzyText[key]] = key;
+        return accumulator;
+    }, {});
+
+console.log(invertResult);
+
